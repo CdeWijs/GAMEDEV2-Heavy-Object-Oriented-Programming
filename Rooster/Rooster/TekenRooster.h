@@ -2,16 +2,19 @@
 #include <iostream>;
 using namespace std;
 
+// Ontvangt informatie van de gebruiker uit UserInfo en tekent het rooster
+// op basis van de input.
 class TekenRooster
 {
 private:
-	float tijd;
-	string dag, module, docent, lokaal;
+	float width, height;
+	string dag;
+	int datum, tijd;
 
 public:
 	TekenRooster();
 	~TekenRooster();
+
 	void getInformation();
-	void showClass(float tijd, string dag, string module, string docent, string lokaal);
 };
 
