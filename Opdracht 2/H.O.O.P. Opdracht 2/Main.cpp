@@ -1,4 +1,4 @@
-// H.O.O.P. Opdracht 2.cpp : Defines the entry point for the console application.
+// Main.cpp : Defines the entry point for the console application.
 //
 
 #include "stdafx.h"
@@ -10,8 +10,12 @@
 int main()
 {
 	Module* newTechnologies = new Module("New Technologies", 2);
-	Module* heavyOOP = new Module ("Heavy Object Oriented Programming", 2);
-	Module* gameDevelopment = new Module ("Kermodule Game Development", 4);
+	Module* heavyOOP = new Module("Heavy Object Oriented Programming", 2);
+	Module* gameDevelopment = new Module("Kermodule Game Development", 4);
+
+	int newTechEC = newTechnologies->getEC();
+	int heavyOOPEC = heavyOOP->getEC();
+	int gameDevEC = gameDevelopment->getEC();
 
 	Docent* docent1 = new Docent("Johnny Blepp");
 	Docent* docent2 = new Docent("George Rooney");
@@ -34,16 +38,32 @@ int main()
 
 	Student* studentenArray[10] = { student1, student2, student3, student4, student5, student6, student7, student8, student9, student10 };
 
-	for (int i = 0; i >= 8; i++)
+	for (int i = 0; i < 10; i++)
 	{
-		int index1 = rand() % 10 + 1;
-		int index2 = rand() % 10 + 1;
-		int index3 = rand() % 10 + 1;
-
-		newTechnologies->addStudenten(*studentenArray[index1]);
-		heavyOOP->addStudenten(*studentenArray[index2]);
-		gameDevelopment->addStudenten(*studentenArray[index3]);
-
+		if (i <= 3)
+		{
+			newTechnologies->addStudenten(*studentenArray[i]);
+			studentenArray[i]->addEC(newTechEC);
+			gameDevelopment->addStudenten(*studentenArray[i]);
+			studentenArray[i]->addEC(gameDevEC);
+			
+		}
+		else if (i > 3 && i <= 6)
+		{
+			heavyOOP->addStudenten(*studentenArray[i]);
+			studentenArray[i]->addEC(heavyOOPEC);
+			newTechnologies->addStudenten(*studentenArray[i]);
+			studentenArray[i]->addEC(newTechEC);
+			gameDevelopment->addStudenten(*studentenArray[i]);
+			studentenArray[i]->addEC(gameDevEC);
+		}
+		else
+		{
+			gameDevelopment->addStudenten(*studentenArray[i]);
+			studentenArray[i]->addEC(gameDevEC);
+			heavyOOP->addStudenten(*studentenArray[i]);
+			studentenArray[i]->addEC(heavyOOPEC);
+		}
 	}
 
 	std::cout << newTechnologies->getName() << std::endl;
@@ -65,8 +85,27 @@ int main()
 	gameDevelopment->getDocent();
 	gameDevelopment->getStudenten();
 
+	std::vector<Student> klassenLijst;
+	for (int i = 0; i < 10; i++)
+	{
+		klassenLijst.push_back(*studentenArray[i]);
+	}
+	
+	for (int i = 0; i < 2; i++)
+	{
+		std::cout << "\n" << std::endl;
+		std::cout << "Klassenlijst: " << std::endl;
+		std::vector<Student>::iterator it = klassenLijst.begin();
+		while (it != klassenLijst.end())
+		{
+			std::cout << it->getName() << ": " << it->getEC() << std::endl;
+			it++;
+		}
+
+		newTechnologies->changeEC();
+	}
+
 	char c;
 	std::cin >> c;
-    return 0;
+	return 0;
 }
-
