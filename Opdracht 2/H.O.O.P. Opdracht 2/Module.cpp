@@ -2,13 +2,16 @@
 #include "Module.h"
 
 
-Module::Module(std::string name, int ec) 
+Module::Module(std::string name, int ec)
 {
-	this->ec = ec;
 	this->name = name;
+	this->ec = ec;
 }
 
-Module::~Module() {}
+
+Module::~Module()
+{
+}
 
 std::string Module::getName()
 {
@@ -18,6 +21,11 @@ std::string Module::getName()
 int Module::getEC()
 {
 	return ec;
+}
+
+void Module::changeEC()
+{
+	ec++;
 }
 
 void Module::addDocent(Docent docent)
