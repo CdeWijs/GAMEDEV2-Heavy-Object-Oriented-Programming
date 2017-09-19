@@ -1,0 +1,18 @@
+﻿  Student.cpp
+c:\users\celin\documents\visual studio 2017\projects\h.o.o.p. opdracht 2\h.o.o.p. opdracht 2\module.h(16): error C2061: syntax error: identifier 'Student'
+  Module.cpp
+c:\users\celin\documents\visual studio 2017\projects\h.o.o.p. opdracht 2\h.o.o.p. opdracht 2\module.cpp(30): error C2065: 'studenten': undeclared identifier
+c:\users\celin\documents\visual studio 2017\projects\h.o.o.p. opdracht 2\h.o.o.p. opdracht 2\module.cpp(30): error C2228: left of '.push_back' must have class/struct/union
+  c:\users\celin\documents\visual studio 2017\projects\h.o.o.p. opdracht 2\h.o.o.p. opdracht 2\module.cpp(30): note: type is 'unknown-type'
+c:\users\celin\documents\visual studio 2017\projects\h.o.o.p. opdracht 2\h.o.o.p. opdracht 2\module.cpp(46): error C2065: 'studenten': undeclared identifier
+c:\users\celin\documents\visual studio 2017\projects\h.o.o.p. opdracht 2\h.o.o.p. opdracht 2\module.cpp(46): error C2228: left of '.begin' must have class/struct/union
+  c:\users\celin\documents\visual studio 2017\projects\h.o.o.p. opdracht 2\h.o.o.p. opdracht 2\module.cpp(46): note: type is 'unknown-type'
+c:\users\celin\documents\visual studio 2017\projects\h.o.o.p. opdracht 2\h.o.o.p. opdracht 2\module.cpp(47): error C2065: 'studenten': undeclared identifier
+c:\users\celin\documents\visual studio 2017\projects\h.o.o.p. opdracht 2\h.o.o.p. opdracht 2\module.cpp(47): error C2228: left of '.end' must have class/struct/union
+  c:\users\celin\documents\visual studio 2017\projects\h.o.o.p. opdracht 2\h.o.o.p. opdracht 2\module.cpp(47): note: type is 'unknown-type'
+  H.O.O.P. Opdracht 2.cpp
+c:\users\celin\documents\visual studio 2017\projects\h.o.o.p. opdracht 2\h.o.o.p. opdracht 2\module.h(16): error C2061: syntax error: identifier 'Student'
+c:\users\celin\documents\visual studio 2017\projects\h.o.o.p. opdracht 2\h.o.o.p. opdracht 2\h.o.o.p. opdracht 2.cpp(43): error C2660: 'Module::addStudenten': function does not take 1 arguments
+c:\users\celin\documents\visual studio 2017\projects\h.o.o.p. opdracht 2\h.o.o.p. opdracht 2\h.o.o.p. opdracht 2.cpp(44): error C2660: 'Module::addStudenten': function does not take 1 arguments
+c:\users\celin\documents\visual studio 2017\projects\h.o.o.p. opdracht 2\h.o.o.p. opdracht 2\h.o.o.p. opdracht 2.cpp(45): error C2660: 'Module::addStudenten': function does not take 1 arguments
+  Generating Code...
