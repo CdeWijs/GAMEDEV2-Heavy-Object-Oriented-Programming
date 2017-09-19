@@ -1,8 +1,7 @@
 #pragma once
-#include "Module.h"
 #include <string>
 #include <vector>
-
+#include <iostream>
 
 class Student
 {
@@ -10,13 +9,13 @@ public:
 	Student(std::string name);
 	~Student();
 
+	void addEC(int ec);
+	void resetEC();
 	std::string getName();
 	int getEC();
-	void addEC(int ec);
 
 private:
 	std::string name;
 	int ecs = 0;
-
 };
 
