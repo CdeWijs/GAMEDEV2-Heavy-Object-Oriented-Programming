@@ -12,14 +12,19 @@ Student::~Student()
 {
 }
 
-std::string Student::getName()
-{
-	return name;
-}
-
 void Student::addEC(int ec)
 {
 	ecs += ec;
+}
+
+void Student::resetEC()
+{
+	ecs = 0;
+}
+
+std::string Student::getName()
+{
+	return name;
 }
 
 int Student::getEC()
