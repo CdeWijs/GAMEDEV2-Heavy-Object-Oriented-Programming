@@ -3,16 +3,41 @@
 
 #include "stdafx.h"
 #include <iostream>
-#include "Grid.h"
+#include <time.h>
 
+#include "Grid.h"
+#include "Cell.h"
+
+using namespace std;
 
 int main()
 {
-	Grid* grid = new Grid();
-	grid->drawGrid();
+	// Create grid
+	Grid* grid = new Grid;
 
-	char c;
-	std::cin >> c;
+	double framerate = 0.1;
+	float timeDif = 0; // delta
+
+	float totalTime = 0; // total time passed
+	clock_t clockTime;
+
+	clockTime = clock();
+
+	while (true)
+	{
+		timeDif = ((float)(clock() - clockTime)) / CLOCKS_PER_SEC;
+		clockTime = clock();
+		
+		totalTime += timeDif;
+
+		if (totalTime > (framerate))
+		{
+			// Create new grid
+			grid->generateNext();
+			totalTime -= (framerate);
+			system("cls");
+		}
+	}
+
 	return 0;
 }
-
